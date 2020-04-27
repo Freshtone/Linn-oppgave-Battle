@@ -1,3 +1,8 @@
+function playMusic()    {
+    var aAudio = new Audio('music.mp3');
+    aAudio.play();
+}
+
 let attackBtn = document.getElementById("attackButton");
 let battleInfo = document.getElementById("battleInfo");
 let heroAttack = 45;
