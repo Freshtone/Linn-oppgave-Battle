@@ -8,7 +8,6 @@ function attackFunc()   {
     let attackTwo = Math.random(()  * 1.9);
     let attackCrit = Math.random(() * 3);
 
-    
 
 }
 
