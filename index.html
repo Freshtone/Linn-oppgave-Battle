@@ -42,13 +42,15 @@
 
                 <img class="boss" src="boss.gif" alt="boss" width="700">
 
-                <progress id="bossHealth" value="200" max="200"></progress>
+                <progress id="lifeNpc" value="200" max="200"></progress>
+                <progress id="shieldNpc" value="200" max="200"></progress>
 
                 <img class="hero" src="hero-transparent.gif" alt="hero">
 
-                <progress id="heroHealth" value="100" max="100"></progress>
+                <progress id="lifeFox" value="100" max="100"></progress>
+                <progress id="shieldFox" value="100" max="100"></progress>
 
-                <button id="attackButton" onclick="attackFunc()">Attack</button>
+                <button id="attackFox" onclick="attackFunc()">Attack</button>
 
                 <button id="shieldButton" onclick="shieldFunc()">Shield</button>
 
@@ -60,13 +62,14 @@
 </body>
 </html>
 
+id for lifeNpc, lifeFox, shieldNpc, shieldFox, attackNpc, attackFox
+
 <!-- To do:
      - backdrop constrained to window size.
      - overlay hero and boss onto backdrop.
      - fixx button placement and health bars.
      - fighting mechanics (Javascript).
      - possibly background music (Game music?).
-
 
      Game mechanics - 
 
