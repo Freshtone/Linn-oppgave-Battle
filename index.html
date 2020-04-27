@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: rgb(113, 122, 122);
+        }
+        button  {
+
+        }
+
+        
+    
+    </style>
+    <div class="frame">
+            <div id="battlePoint" class="innerDiv">
+                <img class="boss" src="boss.gif" alt="boss" width="700">
+
+                <progress id="bossHealth" value="200" max="200"></progress>
+
+                <img class="hero" src="hero-transparent.gif" alt="hero">
+
+                <progress id="heroHealth" value="100" max="100"></progress>
+
+                <button id="attackButton" onclick="attackFunc()">Attack</button>
+
+                <button id="shieldButton" onclick="shieldFunc()">Shield</button>
+
+                <div id="battleInfo"></div>
+            </div>
+
+    </div>
+    
+</body>
+</html>
