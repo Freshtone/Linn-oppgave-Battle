@@ -37,6 +37,7 @@ function attackFunc() {
     hero.life = hero.life - Math.floor(npc.attack / hero.shield);
     if (npc.life <= 0) {
         npc.life = 0;
+        updateScore(npc, hero);
         info = `
         <span style="font-size: 50px; margin: 45px 0 0 140px; display: block">HERO win</br>
         ---</br></span>
@@ -44,11 +45,10 @@ function attackFunc() {
         `;
         updateInfo(info);
         endBattle();
-        updateScore(npc, hero);
         return 0;
-    }
-    if (hero.life <= 0) {
+    } else if (hero.life <= 0) {
         hero.life = 0;
+        updateScore(npc, hero);
         info = `
         <span style="font-size: 50px; margin: 45px 0 0 160px; display: block">NPC win</br>
         ---</br></span>
@@ -56,7 +56,6 @@ function attackFunc() {
         `;
         updateInfo(info);
         endBattle();
-        updateScore(npc, hero);
         return 0;
     }
     updateScore(npc, hero);
