@@ -14,6 +14,25 @@ body, html {
     background-repeat: no-repeat;
 }
 
+blockquote  {
+    width: 500px;
+    height: 150px;
+    line-height: 25px;
+    font-size: 15px;
+    color: black;
+    text-shadow: 2px 1px lightgray;
+    background: gray;
+    opacity: 70%;
+    margin: 5px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 8px 3px lightgray;
+    font-family: 'Trebuchet MS';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 .boss   {
     position: absolute;
     top: 200px;
@@ -22,36 +41,28 @@ body, html {
 
 .hero   {
     position: absolute;
-    top: 300px;
-    left: 800px;
+    top: 320px;
+    left: 850px;
+    height: 60%;
 }
 
 .foxLifeProgressBar {
     position: absolute;
     top: 400px;
-    left: 980px;
+    left: 970px;
     background-color: blue;
-}
+    width: 200px;
+    height: 20px;
 
-.foxShieldProgressBar   {
-    position: absolute;
-    top: 420px;
-    left: 980px;
-    background-color: blue;
 }
 
 .npcLifeProgressBar {
     position: absolute;
     top: 150px;
-    left: 300px;
+    left: 180px;
     background-color: blue;
-}
-
-.npcShieldProgressBar   {
-    position: absolute;
-    top: 170px;
-    left: 300px;
-    background-color: blue;
+    width: 400px;
+    height: 20px;
 }
 
 progress[value]::-webkit-progress-value {
@@ -68,28 +79,35 @@ border-radius: 2px;
 background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+.attackBtn {
+        height: 30px;
+        width: 200px;
+        border: solid;
+        position: absolute;
+        top: 650px;
+        left: 970px;
+        cursor: pointer;
+        font-size: 18px;
+        display: inline-block;
+        transition-duration: 0.9s;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium';
+    }
 
-.attackBtn  {
-    position: absolute;
-    top: 400px;
-    left: 1150px;
+.heroHP {
+        position: absolute;
+        top: 360px;
+        left: 970px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        color: rgb(0, 117, 0);
+    }
+
+.NPCHP  {
+        position: absolute;
+        top: 110px;
+        left: 180px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        color: rgb(0, 117, 0);
 }
-
-.shieldBtn  {
-    position: absolute;
-    top: 430px;
-    left: 1150px;
-}
-

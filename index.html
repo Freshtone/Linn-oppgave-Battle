@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -13,38 +13,38 @@
 <img class="backdropImage" src="background.jpg" alt="backdrop" onclick="playMusic()">
 
     <div class="frame">
+
             <div id="battlePoint" class="innerDiv">
 
                 <img class="boss" src="boss.gif" alt="boss" width="600">
 
-                <progress class="npcLifeProgressBar" id="lifeNpc" value="200" max="200">Life</progress>
-                <progress class="npcShieldProgressBar" id="shieldNpc" value="200" max="200"></progress>
+                        <progress class="npcLifeProgressBar" id="warior1life" value="200" max="200"></progress>
+
+                        <div class="heroHP">HP</div>
 
                 <img class="hero" src="hero-transparent.gif" alt="hero">
 
-                <progress class="foxLifeProgressBar" id="lifeFox" value="100" max="100"></progress>
-                <progress class="foxShieldProgressBar" id="shieldFox" value="100" max="100"></progress>
+                        <progress class="foxLifeProgressBar" id="warior2life" value="100" max="100"></progress>
 
-                <button class="attackBtn" id="attackFox" onclick="attackFunc()">Attack</button>
+                        <div class="NPCHP">HP</div>
 
-                <button class="shieldBtn" id="shieldButton" onclick="shieldFunc()">Shield</button>
+                        <button class="attackBtn" id="attackFox" onclick="attackFunc()">Attack</button>
 
-                <div id="battleInfo"></div>
             </div>
 
     </div>
-
+    <blockquote id="battleInfo">Battle Info</blockquote>
 </body>
 </html>
 
 <!-- To do:
-     - backdrop constrained to window size.
-     - overlay hero and boss onto backdrop.
-     - fixx button placement and health bars.
-     - fighting mechanics (Javascript).
-     - possibly background music (Game music?).
+     - backdrop constrained to window size. OK
+     - overlay hero and boss onto backdrop. OK
+     - fixx button placement and health bars. OK
+     - fighting mechanics (Javascript). OK
+     - possibly background music (Game music?). OK
 
-     Game mechanics - 
+     Game mechanics - OK
 
                     Attack
                     Parry
