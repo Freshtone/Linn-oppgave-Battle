@@ -15,23 +15,10 @@ const battleInfo = document.getElementById('battleInfo');
 
 //view
 function updateScore(warior1, warior2) {
-    // const warior1name = document.getElementById('warior1name');
     const warior1life = document.getElementById('warior1life');
-    // const warior1attack = document.getElementById('warior1attack');
-    // const warior1shield = document.getElementById('warior1shield');
-    // const warior2name = document.getElementById('warior2name');
     const warior2life = document.getElementById('warior2life');
-    // const warior2attack = document.getElementById('warior2attack');
-    // const warior2shield = document.getElementById('warior2shield');
-
-    // warior1name.innerHTML = warior1.name;
     warior1life.value = warior1.life;
-    // warior1attack.innerHTML = warior1.attack;
-    // warior1shield.innerHTML = warior1.shield;
-    // warior2name.innerHTML = warior2.name;
     warior2life.value = warior2.life;
-    // warior2attack.innerHTML = warior2.attack;
-    // warior2shield.innerHTML = warior2.shield;
 }
 function updateInfo(info) {
     battleInfo.innerHTML = info;
@@ -42,6 +29,7 @@ function endBattle() {
 
 //controler
 function attackFunc() {
+    let info = '';
     calculateWarior(npc);
     calculateWarior(hero);
     //shield divide attack and make attack lighter
@@ -49,16 +37,30 @@ function attackFunc() {
     hero.life = hero.life - Math.floor(npc.attack / hero.shield);
     if (npc.life <= 0) {
         npc.life = 0;
-        updateInfo('HERO win');
+        info = `
+        <span style="font-size: 50px; margin: 45px 0 0 140px; display: block">HERO win</br>
+        ---</br></span>
+        <span style="margin-left: 143px">NPC life: ${npc.life}, HERO life: ${hero.life}</span>
+        `;
+        updateInfo(info);
         endBattle();
+        updateScore(npc, hero);
+        return 0;
     }
     if (hero.life <= 0) {
         hero.life = 0;
-        updateInfo('NPC win');
+        info = `
+        <span style="font-size: 50px; margin: 45px 0 0 160px; display: block">NPC win</br>
+        ---</br></span>
+        <span style="margin-left: 163px">NPC life: ${npc.life}, HERO life: ${hero.life}</span>
+        `;
+        updateInfo(info);
         endBattle();
+        updateScore(npc, hero);
+        return 0;
     }
     updateScore(npc, hero);
-    const info = `
+    info = `
     ----------------------</br>
     NPC attack: ${npc.attack}, NPC shield: ${npc.shield}</br>
     HERO attack: ${hero.attack}, HERO shield: ${hero.shield}</br>
@@ -70,8 +72,7 @@ function attackFunc() {
 function calculateWarior(warrior) {
     if (warrior.name === 'NPC') {
         warrior.attack = calculateAttack();
-        //npc shield is divided by 2 (less protection)
-        warrior.shield = calculateShield() / 2;
+        warrior.shield = calculateShield();
         return warrior;
     }
     if (warrior.name === 'HERO') {
@@ -79,9 +80,9 @@ function calculateWarior(warrior) {
         let attackNumber = Math.floor(Math.random() * 3) + 1;
         //three kind of attack
         let attackValue = {
-            1: () => attack * 1,
-            2: () => attack * 1.5,
-            3: () => attack * 2,
+            1: () => attack * 1.5,
+            2: () => attack * 2,
+            3: () => attack * 3,
         };
         warrior.attack = Math.floor(attackValue[attackNumber]());
         warrior.shield = calculateShield();
