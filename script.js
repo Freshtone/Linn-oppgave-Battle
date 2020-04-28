@@ -35,7 +35,19 @@ function attackFunc() {
     //shield divide attack and make attack lighter
     npc.life = npc.life - Math.floor(hero.attack / npc.shield);
     hero.life = hero.life - Math.floor(npc.attack / hero.shield);
-    if (npc.life <= 0) {
+    if (npc.life <= 0 && hero.life <= 0) {
+        npc.life = 0;
+        hero.life = 0;
+        updateScore(npc, hero);
+        info = `
+        <span style="font-size: 50px; margin: 45px 0 0 95px; display: block">You both died</br>
+        ---</br></span>
+        <span style="margin-left: 99px">NPC life: ${npc.life}, HERO life: ${hero.life}</span>
+        `;
+        updateInfo(info);
+        endBattle();
+        return 0;
+    } else if (npc.life <= 0) {
         npc.life = 0;
         updateScore(npc, hero);
         info = `
